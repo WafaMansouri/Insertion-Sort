@@ -1,0 +1,22 @@
+PROCEDURE Insertion_sort(VAR arr: ARRAY_OF INTEGER)
+VAR
+    i,j,k,temp: INTEGER;
+BEGIN
+    FOR i FROM 1 TO arr.length-1 STEP 1  DO
+        j:=0;
+        WHILE (j<=i-1) DO
+            IF (arr[i] < arr[j]) THEN
+                BREAK;
+            ELSE
+                j:=j+1;
+            END_IF
+        END_WHILE
+        k:=i;
+        WHILE (k>j) DO
+            temp:=arr[i];
+            arr[k]:=arr[k-1];
+            k:=k-1;
+        END_WHILE
+        arr[j]:=temp;
+    END_FOR
+END
